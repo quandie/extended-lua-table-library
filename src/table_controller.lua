@@ -3,11 +3,14 @@
 local module = {}
 
 function module:load_into_table_lib()
+    local is_luau = (_VERSION == "Luau")
     if not table then
         error("table lib wasnt found")
     end
-    table.find = function(t, what)
-        return self:find(t, what)
+    if not is_luau then
+        table.find = function(t, what)
+            return self:find(t, what)
+        end
     end
     table.val_to_str = function(v)
         return self:val_to_str(v)
