@@ -3,6 +3,9 @@
 local module = {}
 
 function module:load_into_table_lib()
+    if not table then
+        error("table lib wasnt found")
+    end
     table.find = function(t, what)
         return self:find(t, what)
     end
@@ -30,6 +33,7 @@ function module:load_into_table_lib()
     table.random = function(t)
         return self:random(t)
     end
+    return true
 end
 
 function module:val_to_str(v)
