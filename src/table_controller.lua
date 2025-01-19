@@ -100,7 +100,7 @@ function module:is_array(t)
 end
 
 function module:random(t)
-    if self:is_empty(t) then print("table is empty") return end
+    if self:is_empty(t) then return end
     if self:is_array(t) then
         return t[math.random(1, #t)]
     else
