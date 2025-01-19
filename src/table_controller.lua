@@ -56,7 +56,7 @@ function module:find(t, what)
 end
 
 function module:highest_index(t)
-    local h = 1
+    local h = 0
     for i,_ in pairs(t) do
         h = h + 1
     end
